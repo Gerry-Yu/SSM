@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.UserDao">
+    <select id="selectAllUsers" resultType="User">
+        select * from user;
+    </select>
+    <insert id="insertUser">
+        insert user values(#{userId},#{userName});
+    </insert>
+
+    <select id="getUser" resultType="User">
+        select * from user limit #{first} , #{offset};
+    </select>
+</mapper>
